@@ -1,0 +1,25 @@
+version: '2'
+services:
+  cloud-relay:
+    build: ./cloud-relay
+    restart: unless-stopped
+    network_mode: host
+    labels:
+      io.balena.features.supervisor-api: '1'
+    depends_on:
+        - "mqtt"
+  system-metrics:
+    build: ./system-metrics
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    environment:
+      MQTT_ADDRESS: '127.0.0.1'
+    depends_on:
+        - "mqtt"
+  mqtt:
+    image: eclipse-mosquitto:1.6.15
+    restart: unless-stopped
+    # need host exposure for system-metrics service, but limit to just this host for security
+    ports:
+      - 127.0.0.1:1883:1883

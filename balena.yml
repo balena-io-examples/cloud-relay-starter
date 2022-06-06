@@ -1,0 +1,25 @@
+name: cloud-relay-starter
+type: sw.application
+description: >-
+  Starter project for anyone to create a fleet to experiment with cloud IoT integrations
+using Cloud Relay block.
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/balena-io-examples/cloud-relay-starter'
+  logo:
+    type: blob.asset
+    data:
+      url: >-
+        https://raw.githubusercontent.com/balena-io-examples/cloud-relay-starter/master/logo.png
+data:
+  applicationEnvironmentVariables:
+  defaultDeviceType: raspberrypi4-64
+  supportedDeviceTypes:
+    - raspberrypi4-64
+    - fincm3
+    - raspberrypi3
+    - genericx86-64-ext
+    - intel-nuc
+version: 0.1.0
