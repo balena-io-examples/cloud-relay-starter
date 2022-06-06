@@ -1,8 +1,7 @@
 name: cloud-relay-starter
 type: sw.application
 description: >-
-  Starter project for anyone to create a fleet to experiment with cloud IoT integrations
-using Cloud Relay block.
+  Starter project for anyone to create a fleet to experiment with cloud IoT integrations using Cloud Relay block.
 assets:
   repository:
     type: blob.asset
